@@ -1,5 +1,3 @@
 const app = angular.module("SmittenApp", []);
 
-app.controller("MainController", function() {
-  
-})
+app.controller("MainController", function() {});

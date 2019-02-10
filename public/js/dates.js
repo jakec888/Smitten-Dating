@@ -1,5 +1,3 @@
-const app = angular.module("SmittenApp", []);
+const dates = angular.module("SmittenApp", []);
 
-app.controller("DatesController", function() {
-
-})
+dates.controller("DatesController", function() {});

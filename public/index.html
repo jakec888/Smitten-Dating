@@ -1,37 +1,90 @@
 <html lang="en" ng-app="SmittenApp">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <script
          src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"
-         charset="utf-8"></script>
-    <link rel="stylesheet" href="/css/style.css" />
-    <script src="/js/app.js"></script>
-    <script src="/js/auth.js"></script>
-    <title>Smitten</title>
-  </head>
-  <body ng-controller="MainController as ctrl">
-    {{ctrl.foo}}
-    <div ng-controller="AuthController as auth">
-      <div ng-if="auth.currentUser">
-        <h2>Welcome, {{auth.currentUser.username}}</h2>
-        <button ng-click="auth.logOut()">Log Out</button>
+         charset="utf-8"
+      ></script>
+      <link rel="stylesheet" href="/css/style.css" />
+      <script src="/js/app.js"></script>
+      <script src="/js/auth.js"></script>
+      <title>Smitten</title>
+   </head>
+   <body ng-controller="MainController as ctrl">
+      <div ng-controller="AuthController as auth">
+         <div ng-if="!auth.currentUser">
+            <h2>Create User</h2>
+            <form ng-submit="auth.createUser()">
+               <input type="text" ng-model="auth.newUsername" />
+               <input type="password" ng-model="auth.newPassword" />
+               <input type="submit" value="Create User" />
+            </form>
+            <h2>Log In</h2>
+            <form ng-submit="auth.logIn()">
+               <input type="text" ng-model="auth.username" />
+               <input type="password" ng-model="auth.password" />
+               <input type="submit" value="Log In" />
+            </form>
+         </div>
+         <div ng-if="auth.currentUser">
+            <div ng-if="auth.edit === false">
+               <h2>Welcome, {{ auth.currentUser.username }}</h2>
+               <button ng-click="auth.logOut()">Log Out</button>
+               <div class="profile">
+                  <form ng-submit="auth.changeEdit()">
+                     <input type="submit" value="Edit" />
+                  </form>
+                  <div class="pic-holder">
+                     <img ng-src="{{ auth.currentUser.imgURL }}" alt="Profile Picture" />
+                  </div>
+                  <p>Name: {{ auth.currentUser.info.name }}</p>
+                  <p>Age: {{ auth.currentUser.info.age }}</p>
+                  <p>Height: {{ auth.currentUser.info.height }}</p>
+                  <p>Location: {{ auth.currentUser.info.location }}</p>
+                  <p>Bio: {{ auth.currentUser.info.bio }}</p>
+               </div>
+            </div>
+            <div ng-if="auth.edit === true">
+               <form ng-submit="auth.updateProfile()">
+                  <input
+                     type="text"
+                     ng-model="auth.imgURL"
+                     id="imgURL"
+                     placeholder="{{ auth.currentUser.imgURL }}"
+                  />
+                  <input
+                     type="text"
+                     ng-model="auth.age"
+                     id="age"
+                     placeholder="{{ auth.currentUser.info.age }}"
+                  />
+                  <input
+                     type="text"
+                     ng-model="auth.name"
+                     id="name"
+                     placeholder="{{ auth.currentUser.info.name }}"
+                  />
+                  <input
+                     type="text"
+                     ng-model="auth.height"
+                     id="height"
+                     placeholder="{{ auth.currentUser.info.height }}"
+                  />
+                  <input
+                     type="text"
+                     ng-model="auth.location"
+                     id="location"
+                     placeholder="{{ auth.currentUser.info.location }}"
+                  />
+                  <textarea ng-model="auth.bio" id="bio" cols="30" rows="10">{{
+                     auth.currentUser.info.bio
+                  }}</textarea>
+                  <input type="submit" value="Update" />
+               </form>
+            </div>
+         </div>
       </div>
-      <div ng-if="!auth.currentUser">
-        <h2>Create User</h2>
-        <form ng-submit="auth.createUser()">
-          <input type="text" ng-model="auth.newUsername">
-          <input type="password" ng-model="auth.newPassword">
-          <input type="submit" value="Create User">
-        </form>
-        <h2>Log In</h2>
-        <form ng-submit="auth.logIn()">
-          <input type="text" ng-model="auth.username">
-          <input type="password" ng-model="auth.password">
-          <input type="submit" value="Log In">
-        </form>
-      </div>
-    </div>
    </body>
 </html>

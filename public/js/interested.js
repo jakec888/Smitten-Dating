@@ -1,5 +1,3 @@
-const app = angular.module("SmittenApp", []);
+const inter = angular.module("SmittenApp", []);
 
-app.controller("InterestedController", function() {
-
-})
+inter.controller("InterestedController", function() {});

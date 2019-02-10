@@ -1,5 +1,3 @@
-const app = angular.module("SmittenApp", []);
+const browse = angular.module("SmittenApp", []);
 
-app.controller("BrowseController", function() {
-
-})
+browse.controller("BrowseController", function() {});

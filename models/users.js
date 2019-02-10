@@ -6,10 +6,11 @@ const userSchema = new mongoose.Schema({
    imgURL: { type: String },
    interested: [String],
    info: {
-     name: String,
-     height: String,
-     location: String,
-     bio: String
+      name: String,
+      age: String,
+      height: String,
+      location: String,
+      bio: String
    }
 });
 

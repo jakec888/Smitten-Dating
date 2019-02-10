@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const session = require("express-session");
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const usersController = require("./controllers/users");
 const sessionsController = require("./controllers/sessions");
@@ -23,7 +23,8 @@ app.use("/users", usersController);
 app.use("/sessions", sessionsController);
 // app.use("/dates", datesController);
 
-mongoose.connect("mongodb://localhost:27017/sad", { useNewUrlParser: true });
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/" + "sad"
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 mongoose.connection.once("open", () => {
    console.log("connected to mongoose...");
