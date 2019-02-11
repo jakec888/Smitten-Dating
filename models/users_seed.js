@@ -2,13 +2,14 @@ module.exports = [
 {
 	interested : [ ],
 	username : "James",
-	password : "$2b$10$P/xwJ7F0Oe0y27B2zDP4euo9B5VWlMH.zI9.prnxr1.DmaABSFfVS",
+	password : "$2b$10$fJ55.i/mkmwrAjFhj/84CelOyRjKCql1moAE8MfeIUwSpsmZ1D6jy",
 	imgURL : "https://www.elitesingles.com/sites/www.elitesingles.com/files/styles/elite_rectangle_article_arrow_left_frame/public/2b_en_ta_teaser_sp1.png",
 	info : {
 		age : 42,
 		name : "James",
 		height : "5'10\"",
-		location : "New York, NY"
+		location : "New York, NY",
+		bio: "I’m a born and raised Alabama boy, and like any good country boy I clean up good and know how to turn on the charm. I love spending the weekend outside exploring the area, BBQing with friends, and harassing my dog. (He secretly loves it, of course.)"
   }
 },
 {
@@ -20,7 +21,8 @@ module.exports = [
 		age : 27,
 		name : "Elena",
 		height : "5'4\"",
-		location : "Chicago, IL"
+		location : "Chicago, IL",
+		bio: "I’m a passionate, kind, and loving teacher who believes in social justice and taking Sundays off."
 	}
 },
 {
@@ -32,7 +34,8 @@ module.exports = [
 		age : 24,
 		name : "Nick",
 		height : "6'0\"",
-		location : "San Francisco, CA"
+		location : "San Francisco, CA",
+		bio : "I’m a fun-loving guy who’s a happy dog-dad to my girl Roxie. My friends would probably describe me as goofy but somehow I always end up being the responsible one."
 	}
 },
 {
@@ -44,7 +47,8 @@ module.exports = [
 		age : 30,
 		name : "Kristina",
 		height : "5'9\"",
-		location : "Los Angeles, CA"
+		location : "Los Angeles, CA",
+		bio: "From a young age, I’ve had a big heart. In my role as a nurse, I have employed that big heart and created a world of love and compassion around me."
 	}
 },
 {
@@ -56,7 +60,8 @@ module.exports = [
 		age : 28,
 		name : "Jack",
 		height : "5'8\"",
-		location : "Austin, TX"
+		location : "Austin, TX",
+		bio: "I’m a creature of contradictions—An athletic bookworm, a night owl who’s an early riser, and an active guy who loves to be lazy on Sunday mornings."
 	}
 },
 {
@@ -68,7 +73,8 @@ module.exports = [
 		age : 27,
 		name : "Jenny",
 		height : "5'3\"",
-		location : "Seattle, WA"
+		location : "Seattle, WA",
+		bio : "The first book I ever cried at was Bridge to Terabithia. It’s all been downhill from there. My favorite books all evoke some emotion in me. I’d love to talk about which works of literature have inspired tears in your eyes."
 	}
 },
 {
@@ -80,7 +86,8 @@ module.exports = [
 		age : 32,
 		name : "Sean",
 		height : "5'7\"",
-		location : "Brooklyn, NY"
+		location : "Brooklyn, NY",
+		bio : "If you need a recommendation for the best taco in town, I’m your man. Looking for the best margarita recommendation to match my own expertise."
 	}
 }
 ]
