@@ -7,14 +7,21 @@ app.config([
       $locationProvider.html5Mode({ enabled: true });
       $routeProvider
          .when("/example", {
-            templateUrl: "example.html",
-            controller: "ExampleController",
+            templateUrl: "views/example.html",
+            controller: function() {
+               this.foo = "bar";
+            },
+            controllerAs: "ctrl"
+         })
+         .when("/example2", {
+            templateUrl: "views/example2.html",
+            controller: "Example2Controller",
             controllerAs: "ctrl"
          })
          .when("/home", {
             templateUrl: "home.html",
-            controller: "AuthController"
-            // controllerAs: "auth"
+            controller: "AuthController",
+            controllerAs: "auth"
          })
          .when("/browse", {
             templateUrl: "views/browse.html",
@@ -47,6 +54,10 @@ app.config([
 ]);
 
 app.controller("MainController", function() {});
+
+app.controller("Example2Controller", function() {
+   this.foo = "bar";
+});
 
 app.controller("ExampleController", [
    "$routeParams",
