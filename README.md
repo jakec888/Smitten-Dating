@@ -12,19 +12,27 @@
    -  list of google maps of all your dates and location
 
 ## Things To Do
-
 -  Create .env
--  CRUD User
 -  CRUD Dates
--  Angular Frontend (3 pages)
+-  Angular Frontend Partials
+   - Dates
 
-### Things implemented
+## Things in Progress
+-  Angular Frontend Partials
+   - Interested
+
+
+## Things implemented
 -  Authentication
    -  Session
    -  Signup
       -  Encryption
    -  Login
    -  Login Frontend 
+-  CRUD User
+- Angular Frontend Partials
+   - Browse
+
 
 ### Updates
 Friday 6P Eastern (Vincent)
