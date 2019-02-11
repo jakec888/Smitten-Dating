@@ -19,20 +19,30 @@
 -  Angular Frontend (3 pages)
 
 ### Things implemented
+
 -  Authentication
    -  Session
    -  Signup
       -  Encryption
    -  Login
-   -  Login Frontend 
+   -  Login Frontend
 
 ### Updates
-Friday 6P Eastern (Vincent)
-- authentication implemented
-- angular controllers split by functionality
-- code accidentally pushed to master without going through dev
-- planning to work on CRUD User next
 
+Friday 6P Eastern (Vincent)
+
+-  authentication implemented
+-  angular controllers split by functionality
+-  code accidentally pushed to master without going through dev
+-  planning to work on CRUD User next
+
+Sunday/Monday Morning (Jake)
+
+-  created the browes, dates, and intrested pages
+-  put everything in the app.js file to create routes
+-  unable to figure out how/why I am unable to view the properties when calling the controller by name
+
+**_ git checkout jake _**
 
 #### Code Snippets
 
