@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
    User.findOne({ username: req.body.username }, (err, foundUser) => {
-      if (bcrypt.compareSync(req.body.password, foundUser.password)) {
+      if(foundUser !== null && bcrypt.compareSync(req.body.password, foundUser.password)) {
          req.session.currentUser = foundUser;
          res.json(foundUser);
       } else {
