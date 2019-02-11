@@ -14,7 +14,7 @@
 ## Things To Do
 
 -  Create .env
--  CRUD User
+-  CRUD User (done)
 -  CRUD Dates
 -  Angular Frontend (3 pages)
 
