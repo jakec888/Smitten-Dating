@@ -13,17 +13,17 @@ router.post("/", (req, res) => {
    });
 });
 
-// router.get("/", (req, res) => {
-//    User.find({}, (err, foundUsers) => {
-//       res.json(foundUsers);
-//    });
-// });
+router.get("/", (req, res) => {
+   User.find({}, (err, foundUsers) => {
+      res.json(foundUsers);
+   });
+});
 
-// router.delete("/:id", (req, res) => {
-//    User.findByIdAndRemove(req.params.id, (err, removedUser) => {
-//       res.json(removedUser);
-//    });
-// });
+router.delete("/:id", (req, res) => {
+   User.findByIdAndRemove(req.params.id, (err, removedUser) => {
+      res.json(removedUser);
+   });
+});
 
 router.put("/:id", (req, res) => {
    User.findByIdAndUpdate(

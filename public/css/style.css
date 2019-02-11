@@ -6,6 +6,11 @@ body {
    font-family: "Montserrat", sans-serif;
 }
 
+img {
+  height: 300px;
+  width: auto;
+}
+
 h1 {
    color: red;
 }

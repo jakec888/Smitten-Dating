@@ -1,0 +1,14 @@
+<div ng-repeat="profile in ctrl.userProfiles">
+  <div class="profile" ng-if="$index === ctrl.profileIndexToShow">
+   <img ng-src="{{ profile.imgURL }}" alt="Profile Picture" />
+   <p>Name: {{ profile.info.name }}</p>
+   <p>Age: {{ profile.info.age }}</p>
+   <p>Height: {{ profile.info.height }}</p>
+   <p>Location: {{ profile.info.location }}</p>
+   <p>Bio: {{ profile.info.bio }}</p>
+   <input ng-keyup="ctrl.viewNextProfile()"/>
+   <button ng-click="ctrl.viewPrevProfile()">Previous</button>
+   <button ng-click="ctrl.toggleBrowsing()">Stop Browsing</button>
+   <button ng-click="ctrl.viewNextProfile()">Next</button>
+  </div>
+</div>
