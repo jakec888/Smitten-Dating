@@ -42,7 +42,7 @@ Sunday/Monday Morning (Jake)
 -  put everything in the app.js file to create routes
 -  unable to figure out how/why I am unable to view the properties when calling the controller by name
 
-**_ git checkout jake _**
+`git checkout jake`
 
 #### Code Snippets
 
