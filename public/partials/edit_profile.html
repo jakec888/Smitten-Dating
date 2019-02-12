@@ -1,7 +1,7 @@
 <h2>Edit Your Profile</h2>
 <form ng-submit="ctrl.updateProfile()">
-  <img ng-src="{{ctrl.currentUser.imgURL}}"/>
-  <label for="imgURL">Image URL:</label>
+   <img ng-src="{{ ctrl.currentUser.imgURL }}" />
+   <label for="imgURL">Image URL:</label>
    <input
       type="text"
       ng-model="ctrl.imgURL"
@@ -38,9 +38,12 @@
    />
    <label for="bio">Bio:</label>
    <textarea
-     ng-model="ctrl.bio"
-     id="bio" cols="30" rows="10"
-     placeholder="{{ ctrl.currentUser.info.bio }}">
+      ng-model="ctrl.bio"
+      id="bio"
+      cols="30"
+      rows="10"
+      placeholder="{{ ctrl.currentUser.info.bio }}"
+   >
    </textarea>
    <input type="submit" value="Update" />
 </form>

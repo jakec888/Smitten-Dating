@@ -1,10 +1,15 @@
-<h2>Your Matches!</h2>
-<table class="matches_list" ng-repeat="match in ctrl.matches">
-  <tr>
-    <td><img ng-src="{{match.imgURL}}" alt="profile thumbnail"></td>
-    <td>{{match.info.name}}</td>
-    <td>{{match.info.age}}</td>
-    <td>{{match.info.location}}</td>
-    <td><button>Plan a Date</button></td>
-  </tr>
-</table>
+<div ng-if="!ctrl.isCreatingDates">
+   <h2>Your Matches!</h2>
+   <table class="matches_list" ng-repeat="match in ctrl.matches">
+      <tr>
+         <td><img ng-src="{{ match.imgURL }}" alt="profile thumbnail" /></td>
+         <td>{{ match.info.name }}</td>
+         <td>{{ match.info.age }}</td>
+         <td>{{ match.info.location }}</td>
+         <!-- <td><button>Plan a Date</button></td> -->
+         <td><button ng-click="ctrl.viewCreateDates()">View Dates</button></td>
+      </tr>
+   </table>
+</div>
+
+<div ng-if="ctrl.isCreatingDates" ng-include="'partials/create_dates.html'"></div>

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/users.js");
-const userSeed = require("../models/users_seed.js")
+const userSeed = require("../models/users_seed.js");
 const bcrypt = require("bcryptjs");
 
 // create route
@@ -18,9 +18,9 @@ router.post("/", (req, res) => {
 // seed route
 router.get("/seed", (req, res) => {
    User.create(userSeed, (err, createdUsers) => {
-     res.status(201).json({
-        status: 201,
-        message: "user database seeded"
+      res.status(201).json({
+         status: 201,
+         message: "user database seeded"
       });
    });
 });

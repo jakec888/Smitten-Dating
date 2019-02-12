@@ -7,13 +7,13 @@ body {
 }
 
 img {
-  height: 300px;
-  width: auto;
+   height: 300px;
+   width: auto;
 }
 
 .matches_list img {
-  height: 50px;
-  width: auto;
+   height: 50px;
+   width: auto;
 }
 
 h1 {
