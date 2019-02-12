@@ -2,35 +2,52 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css");
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
+/*
+Color Scheeme
+https://coolors.co/05668d-427aa1-ebf2fa-679436-a5be00
+- #05668D
+- #427AA1
+- #EBF2FA
+- #679436
+- #A5BE00
+*/
+
 body {
    font-family: "Montserrat", sans-serif;
    display: flex;
    justify-content: center;
-   /* background-color: firebrick; */
+   color: #ebf2fa;
 }
-/* 
-#particles-js {
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: 50% 50%;
-   opacity: 0.48;
-} */
+
+input[type="submit"] {
+   background-color: #ebf2fa;
+   color: #427aa1;
+}
 
 .auth {
-   background-color: blueviolet;
+   display: flex;
+   justify-content: center;
+   align-items: center;
    width: 75%;
 }
 
 .part-auth {
+   background-color: #427aa1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding: 20px;
+   width: 75%;
+}
+
+.sign-up-form {
    display: flex;
    flex-direction: column;
 }
 
-.sign-up {
-   
+.log-in-form {
+   display: flex;
+   flex-direction: column;
 }
 
 img {

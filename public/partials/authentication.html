@@ -1,17 +1,21 @@
 <div class="part-auth">
    <div class="sign-up">
       <h2>Create User</h2>
-      <form ng-submit="ctrl.createUser()">
-         <input type="text" ng-model="ctrl.newUsername" />
-         <input type="password" ng-model="ctrl.newPassword" />
+      <form ng-submit="ctrl.createUser()" class="sign-up-form">
+         <!-- <label for="newUsername">Username</label> -->
+         <input type="text" ng-model="ctrl.newUsername" placeholder="Username" />
+         <!-- <label for="newPassword">Password</label> -->
+         <input type="password" ng-model="ctrl.newPassword" placeholder="Password" />
          <input type="submit" value="Create User" />
       </form>
    </div>
    <div class="log-in">
       <h2>Log In</h2>
-      <form ng-submit="ctrl.logIn()">
-         <input type="text" ng-model="ctrl.username" />
-         <input type="password" ng-model="ctrl.password" />
+      <form ng-submit="ctrl.logIn()" class="log-in-form">
+         <!-- <label for="newUsername">Username</label> -->
+         <input type="text" ng-model="ctrl.username" placeholder="Username" />
+         <!-- <label for="newPassword">Password</label> -->
+         <input type="password" ng-model="ctrl.password" placeholder="Password" />
          <input type="submit" value="Log In" />
       </form>
    </div>
