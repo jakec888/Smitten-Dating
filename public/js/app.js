@@ -277,10 +277,43 @@ app.controller("MainController", [
 
       this.viewDates = () => {
          this.toggleViewingDates();
+         this.dates = [];
+
+         $http({
+            method: "GET",
+            url: `/dates/`
+         }).then(
+            response => {
+               this.dates = response.data;
+               console.log(response.data);
+            },
+            error => {
+               console.error(error);
+            }
+         );
+
          // this.dates = [];
          // for (let date of this.currentUser.dates) {
          //    // HERE
          // }
+
+         // for (let date of this.currentUser.dates) {
+         // console.log(date);
+
+         // $http({
+         //    method: "POST",
+         //    url: `/users/${date}`
+         // })
+         //    .then(result => {
+         //       console.log(result.data);
+         //       this.dates.push(result.data);
+         //    })
+         //    .catch(err => {
+         //       console.log(err);
+         //    });
+         // }
+
+         // console.log(this.dates);
       };
    }
 ]);

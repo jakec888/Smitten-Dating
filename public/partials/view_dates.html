@@ -1,1 +1,6 @@
-<h1>Dates Here!</h1>
+<div ng-repeat="date in ctrl.dates">
+   <div>
+      <p>Time: {{ date.time }}</p>
+      <p>Description: {{ date.description }}</p>
+   </div>
+</div>

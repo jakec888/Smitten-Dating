@@ -82,4 +82,10 @@ router.post("/", (req, res) => {
    });
 });
 
+router.get("/", (req, res) => {
+   Dates.find({}, (err, foundDates) => {
+      res.json(foundDates);
+   });
+});
+
 module.exports = router;
