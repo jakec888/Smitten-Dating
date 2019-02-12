@@ -12,6 +12,14 @@ app.controller("MainController", [
       this.matches = [];
       this.dates = [];
 
+      this.toggleHome = () => {
+         this.isEditing = false;
+         this.isBrowsing = false;
+         this.isViewingMatches = false;
+         this.isCreatingDates = false;
+         this.isViewingDates = false;
+      };
+
       this.createUser = () => {
          $http({
             method: "POST",
