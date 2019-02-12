@@ -16,7 +16,8 @@ body {
    font-family: "Montserrat", sans-serif;
    display: flex;
    justify-content: center;
-   color: #ebf2fa;
+   background-color: #ebf2fa;
+   color: #427aa1;
 }
 
 input[type="submit"] {
@@ -32,7 +33,7 @@ input[type="submit"] {
 }
 
 .part-auth {
-   background-color: #427aa1;
+   background-color: #ebf2fa;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -50,7 +51,45 @@ input[type="submit"] {
    flex-direction: column;
 }
 
+.logout-button {
+   font-size: 10px;
+}
+
+.main-background {
+   background-color: #ebf2fa;
+   color: #427aa1;
+   width: 100%;
+}
+/* 
+.container {
+   width: 85%;
+}
+*/
+.main-header {
+   display: flex;
+   justify-content: space-between;
+   padding: 25px 10px 0 10px;
+}
+
+.header-button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.nav-buttons {
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.profile {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
 img {
+   border-radius: 25px;
    height: 300px;
    width: auto;
 }
@@ -60,6 +99,6 @@ img {
    width: auto;
 }
 
-h1 {
+/* h1 {
    color: red;
-}
+} */

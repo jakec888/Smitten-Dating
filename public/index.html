@@ -18,37 +18,42 @@
          ng-include="'partials/authentication.html'"
          class="auth"
       ></div>
-      <div ng-if="ctrl.currentUser">
-         <h2>Welcome, {{ ctrl.currentUser.username }}</h2>
-         <button ng-click="ctrl.logOut()">Log Out</button>
-         <div
-            ng-if="!ctrl.isEditing && !ctrl.isBrowsing && !ctrl.isViewingMatches && !ctrl.isViewingDates"
-         >
-            <button ng-click="ctrl.toggleEditing()">Edit Profile</button>
-            <button ng-click="ctrl.deleteProfile()">Delete Profile</button>
-            <button ng-click="ctrl.toggleBrowsing()">Browse Profiles</button><br />
-            <button ng-click="ctrl.viewMatches()">View Matches</button><br />
-            <button ng-click="ctrl.viewDates()">View Dates</button><br />
-            <div class="profile">
-               <h2>Your Profile</h2>
-               <img ng-src="{{ ctrl.currentUser.imgURL }}" alt="Profile Picture" />
-               <p>Name: {{ ctrl.currentUser.info.name }}</p>
-               <p>Age: {{ ctrl.currentUser.info.age }}</p>
-               <p>Height: {{ ctrl.currentUser.info.height }}</p>
-               <p>Location: {{ ctrl.currentUser.info.location }}</p>
-               <p>Bio: {{ ctrl.currentUser.info.bio }}</p>
+      <div ng-if="ctrl.currentUser" class="main-background">
+         <div class="main-header">
+            <h1>Welcome, {{ ctrl.currentUser.info.name }}</h1>
+            <div class="header-button">
+               <button ng-click="ctrl.logOut()" class="logout-button">Log Out</button>
             </div>
          </div>
-         <div ng-if="ctrl.isEditing" ng-include="'partials/edit_profile.html'"></div>
-         <div
-            ng-if="ctrl.isBrowsing"
-            ng-include="'partials/browse_profiles.html'"
-         ></div>
-         <div
-            ng-if="ctrl.isViewingMatches"
-            ng-include="'partials/view_matches.html'"
-         ></div>
-         <div ng-if="ctrl.isViewingDates" ng-include="'partials/view_dates.html'"></div>
+         <div ng-include="'partials/nav.html'"></div>
+         <div class="container">
+            <div
+               ng-if="!ctrl.isEditing && !ctrl.isBrowsing && !ctrl.isViewingMatches && !ctrl.isViewingDates"
+            >
+               <div class="profile">
+                  <h2>Your Profile</h2>
+                  <img ng-src="{{ ctrl.currentUser.imgURL }}" alt="Profile Picture" />
+                  <p>Name: {{ ctrl.currentUser.info.name }}</p>
+                  <p>Age: {{ ctrl.currentUser.info.age }}</p>
+                  <p>Height: {{ ctrl.currentUser.info.height }}</p>
+                  <p>Location: {{ ctrl.currentUser.info.location }}</p>
+                  <p>Bio: {{ ctrl.currentUser.info.bio }}</p>
+               </div>
+            </div>
+            <div ng-if="ctrl.isEditing" ng-include="'partials/edit_profile.html'"></div>
+            <div
+               ng-if="ctrl.isBrowsing"
+               ng-include="'partials/browse_profiles.html'"
+            ></div>
+            <div
+               ng-if="ctrl.isViewingMatches"
+               ng-include="'partials/view_matches.html'"
+            ></div>
+            <div
+               ng-if="ctrl.isViewingDates"
+               ng-include="'partials/view_dates.html'"
+            ></div>
+         </div>
       </div>
       <!-- </div> -->
       <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
