@@ -210,28 +210,35 @@ app.controller("MainController", [
          this.isCreatingDates = !this.isCreatingDates;
       };
 
-      this.viewCreateDates = () => {
+      this.viewCreateDates = id => {
+         console.log("View");
+         console.log(id);
+
          this.toggleCreateDates();
       };
 
-      this.createADate = () => {
-         $http({
-            method: "POST",
-            url: "/dates",
-            data: {
-               username: this.newUsername,
-               password: this.newPassword
-            }
-         }).then(
-            response => {
-               this.newUsername = "";
-               this.newPassword = "";
-            },
-            error => {
-               console.error(error);
-            }
-         );
-      };
+      this.createADate = userID => {
+         console.log(`My ID: ${this.currentUser._id}`);
+         console.log(`User ID: ${userID}`);
+         console.log(`Time: ${this.time}`);
+         console.log(`Description: ${this.description}`);
 
+         // $http({
+         //    method: "POST",
+         //    url: "/dates",
+         //    data: {
+         //       username: this.newUsername,
+         //       password: this.newPassword
+         //    }
+         // }).then(
+         //    response => {
+         //       this.newUsername = "";
+         //       this.newPassword = "";
+         //    },
+         //    error => {
+         //       console.error(error);
+         //    }
+         // );
+      };
    }
 ]);

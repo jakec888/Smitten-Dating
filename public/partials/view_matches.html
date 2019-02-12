@@ -1,15 +1,31 @@
 <div ng-if="!ctrl.isCreatingDates">
    <h2>Your Matches!</h2>
-   <table class="matches_list" ng-repeat="match in ctrl.matches">
+   <!-- <table class="matches_list" ng-repeat="match in ctrl.matches">
       <tr>
          <td><img ng-src="{{ match.imgURL }}" alt="profile thumbnail" /></td>
+         <td>{{ match._id }}</td>
          <td>{{ match.info.name }}</td>
          <td>{{ match.info.age }}</td>
          <td>{{ match.info.location }}</td>
-         <!-- <td><button>Plan a Date</button></td> -->
-         <td><button ng-click="ctrl.viewCreateDates()">View Dates</button></td>
+         <td><button>Plan a Date</button></td>
       </tr>
-   </table>
+   </table> -->
+
+   <div ng-repeat="match in ctrl.matches">
+      <h3>{{ match.info.name }}</h3>
+      <img ng-src="{{ match.imgURL }}" alt="profile thumbnail" />
+      <p>{{ match.info.age }}</p>
+      <p>{{ match.info.location }}</p>
+
+      <h3>Create A Date</h3>
+      <form ng-submit="ctrl.createADate(match._id)">
+         <input type="text" ng-model="ctrl.time" />
+         <textarea ng-model="ctrl.description" cols="30" rows="10"></textarea>
+         <input type="submit" value="Create Date" />
+      </form>
+
+      <hr />
+   </div>
 </div>
 
 <div ng-if="ctrl.isCreatingDates" ng-include="'partials/create_dates.html'"></div>

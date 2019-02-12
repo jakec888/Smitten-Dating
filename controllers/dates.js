@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/users.js");
+const Dates = require("../models/dates.js");
 
 router.post("/", (req, res) => {
    console.log(req.body);

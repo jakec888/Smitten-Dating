@@ -21,7 +21,7 @@ app.use(
 
 app.use("/users", usersController);
 app.use("/sessions", sessionsController);
-app.use("/dates", datesController);
+// app.use("/dates", datesController);
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/" + "sad";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
