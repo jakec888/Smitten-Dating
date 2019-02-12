@@ -11,6 +11,11 @@ img {
   width: auto;
 }
 
+.matches_list img {
+  height: 50px;
+  width: auto;
+}
+
 h1 {
    color: red;
 }

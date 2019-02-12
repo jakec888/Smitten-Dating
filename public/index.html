@@ -12,28 +12,17 @@
       <title>Smitten</title>
    </head>
    <body ng-controller="MainController as ctrl">
-       <div ng-if="!ctrl.currentUser">
-          <h2>Create User</h2>
-          <form ng-submit="ctrl.createUser()">
-             <input type="text" ng-model="ctrl.newUsername" />
-             <input type="password" ng-model="ctrl.newPassword" />
-             <input type="submit" value="Create User" />
-          </form>
-          <h2>Log In</h2>
-          <form ng-submit="ctrl.logIn()">
-             <input type="text" ng-model="ctrl.username" />
-             <input type="password" ng-model="ctrl.password" />
-             <input type="submit" value="Log In" />
-          </form>
-       </div>
+       <div ng-if="!ctrl.currentUser" ng-include="'partials/authentication.html'"></div>
        <div ng-if="ctrl.currentUser">
           <h2>Welcome, {{ ctrl.currentUser.username }}</h2>
           <button ng-click="ctrl.logOut()">Log Out</button>
-          <div ng-if="!ctrl.isEditing && !ctrl.isBrowsing">
+          <div ng-if="!ctrl.isEditing && !ctrl.isBrowsing && !ctrl.isViewingMatches">
+            <button ng-click="ctrl.toggleEditing()">Edit Profile</button>
+            <button ng-click="ctrl.deleteProfile()">Delete Profile</button>
+            <button ng-click="ctrl.toggleBrowsing()">Browse Profiles</button><br>
+            <button ng-click="ctrl.viewMatches()">View Matches</button><br>
              <div class="profile">
-                <button ng-click="ctrl.toggleEditing()">Edit Profile</button>
-                <button ng-click="ctrl.deleteProfile()">Delete Profile</button>
-                <button ng-click="ctrl.toggleBrowsing()">Browse Profiles</button><br>
+               <h2>Your Profile</h2>
                 <img ng-src="{{ ctrl.currentUser.imgURL }}" alt="Profile Picture" />
                 <p>Name: {{ ctrl.currentUser.info.name }}</p>
                 <p>Age: {{ ctrl.currentUser.info.age }}</p>
@@ -44,6 +33,7 @@
           </div>
           <div ng-if="ctrl.isEditing" ng-include="'partials/edit_profile.html'"></div>
           <div ng-if="ctrl.isBrowsing" ng-include="'partials/browse_profiles.html'"></div>
+          <div ng-if="ctrl.isViewingMatches" ng-include="'partials/view_matches.html'"></div>
        </div>
    </body>
 </html>
