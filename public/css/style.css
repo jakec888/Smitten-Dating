@@ -60,7 +60,7 @@ input[type="submit"] {
    color: #427aa1;
    width: 100%;
 }
-/* 
+/*
 .container {
    width: 85%;
 }
@@ -125,8 +125,9 @@ img {
    width: auto;
 }
 
-.matches_list img {
-   height: 50px;
+.part_dates img {
+   border-radius: 15px;
+   height: 100px;
    width: auto;
 }
 

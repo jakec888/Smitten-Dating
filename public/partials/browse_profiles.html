@@ -1,5 +1,6 @@
 <div ng-repeat="profile in ctrl.userProfiles">
    <div class="profile" ng-if="$index === ctrl.profileIndexToShow">
+      <h2>Looking for Someone Special...</h2>
       <img ng-src="{{ profile.imgURL }}" alt="Profile Picture" />
       <br />
       <button
@@ -21,7 +22,7 @@
       <p>Bio: {{ profile.info.bio }}</p>
       <div class="browse-buttons">
          <button ng-click="ctrl.viewPrevProfile()">Previous</button>
-         <button ng-click="ctrl.toggleBrowsing()">Stop Browsing</button>
+         <!-- <button ng-click="ctrl.toggleBrowsing()">Stop Browsing</button> -->
          <button ng-click="ctrl.viewNextProfile()">Next</button>
       </div>
    </div>

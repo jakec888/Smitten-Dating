@@ -1,6 +1,13 @@
-<div ng-repeat="date in ctrl.dates | filter:ctrl.currentUser._id">
-   <div>
-      <p>Time: {{ date.time }}</p>
-      <p>Description: {{ date.description }}</p>
-   </div>
+<div class="part_dates" ng-repeat="date in ctrl.dates | filter:ctrl.currentUser._id">
+   <img
+     ng-if="date.currentUserID === ctrl.currentUser._id"
+     ng-src="{{date.intrestedUserimgURL}}"/>
+   <img
+     ng-if="date.currentUserID !== ctrl.currentUser._id"
+     ng-src="{{date.currentUserimgURL}}"/>
+    <p>{{ date.time | date:'MMM dd, h:mm a'}}</p>
+    <p ng-if="date.currentUserID === ctrl.currentUser._id">
+      {{ date.description }} with {{date.intrestedUsername}}</p>
+    <p ng-if="date.currentUserID !== ctrl.currentUser._id">
+      {{ date.description }} with {{date.currentUsername}}</p>
 </div>

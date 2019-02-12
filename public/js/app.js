@@ -12,7 +12,7 @@ app.controller("MainController", [
       this.matches = [];
       this.dates = [];
 
-      this.toggleHome = () => {
+      this.goHome = () => {
          this.isEditing = false;
          this.isBrowsing = false;
          this.isViewingMatches = false;
@@ -52,11 +52,7 @@ app.controller("MainController", [
                this.currentUser = response.data;
                this.username = "";
                this.password = "";
-               this.isEditing = false;
-               this.isBrowsing = false;
-               this.isViewingMatches = false;
-               this.isViewingDates = false;
-               this.isCreatingDates = false;
+               this.goHome();
                this.fetchProfiles();
             },
             error => {
@@ -93,8 +89,9 @@ app.controller("MainController", [
          );
       };
 
-      this.toggleEditing = () => {
-         this.isEditing = !this.isEditing;
+      this.startEditing = () => {
+         this.goHome();
+         this.isEditing = true;
       };
 
       this.updateProfile = () => {
@@ -122,7 +119,7 @@ app.controller("MainController", [
                this.height = "";
                this.location = "";
                this.bio = "";
-               this.toggleEditing();
+               this.goHome();
             },
             error => {
                console.error(error);
@@ -144,8 +141,9 @@ app.controller("MainController", [
          );
       };
 
-      this.toggleBrowsing = () => {
-         this.isBrowsing = !this.isBrowsing;
+      this.startBrowsing = () => {
+        this.goHome();
+        this.isBrowsing = true;
       };
 
       this.fetchProfiles = () => {
@@ -198,12 +196,9 @@ app.controller("MainController", [
          });
       };
 
-      this.toggleViewingMatches = () => {
-         this.isViewingMatches = !this.isViewingMatches;
-      };
-
       this.viewMatches = () => {
-         this.toggleViewingMatches();
+         this.goHome();
+         this.isViewingMatches = true;
          this.matches = [];
          for (let interest of this.currentUser.interested) {
             let index = this.userProfiles.findIndex(
@@ -215,17 +210,6 @@ app.controller("MainController", [
                this.matches.push(this.userProfiles[index]);
             }
          }
-      };
-
-      this.toggleCreateDates = () => {
-         this.isCreatingDates = !this.isCreatingDates;
-      };
-
-      this.viewCreateDates = id => {
-         console.log("View");
-         console.log(id);
-
-         this.toggleCreateDates();
       };
 
       this.createADate = (userID, imgURL, name, age, location) => {
@@ -284,7 +268,8 @@ app.controller("MainController", [
       };
 
       this.viewDates = () => {
-         this.toggleViewingDates();
+         this.goHome();
+         this.isViewingDates = true;
          this.dates = [];
 
          $http({
