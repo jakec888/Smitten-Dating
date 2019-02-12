@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 const usersController = require("./controllers/users");
 const sessionsController = require("./controllers/sessions");
-// const datesController = require("./controllers/dates");
+const datesController = require("./controllers/dates");
 
 app.use(express.json());
 app.use(express.static("public"));
@@ -21,9 +21,9 @@ app.use(
 
 app.use("/users", usersController);
 app.use("/sessions", sessionsController);
-// app.use("/dates", datesController);
+app.use("/dates", datesController);
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/" + "sad"
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/" + "sad";
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 mongoose.connection.once("open", () => {

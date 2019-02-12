@@ -12,35 +12,43 @@
    -  list of google maps of all your dates and location
 
 ## Things To Do
+
 -  Create .env
 -  CRUD Dates
 -  Angular Frontend Partials
-   - Dates
+   -  Dates
 
 ## Things in Progress
--  Angular Frontend Partials
-   - Interested
 
+-  Angular Frontend Partials
+   -  Interested
 
 ## Things implemented
+
 -  Authentication
    -  Session
    -  Signup
       -  Encryption
    -  Login
-   -  Login Frontend 
+   -  Login Frontend
 -  CRUD User
-- Angular Frontend Partials
-   - Browse
-
+-  Angular Frontend Partials
+   -  Browse
 
 ### Updates
-Friday 6P Eastern (Vincent)
-- authentication implemented
-- angular controllers split by functionality
-- code accidentally pushed to master without going through dev
-- planning to work on CRUD User next
 
+Friday 6P Eastern (Vincent)
+
+-  authentication implemented
+-  angular controllers split by functionality
+-  code accidentally pushed to master without going through dev
+-  planning to work on CRUD User next
+
+Monday Night Update (Jake)
+
+- Finished all routes
+- Angular's way of displaying data gave me lots of problems.
+- Dates.js (Controller) Line number 86, displays all dates but I can't seem to retrieve by Id so I can get back that date's specific data
 
 #### Code Snippets
 

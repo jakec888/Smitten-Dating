@@ -7,84 +7,60 @@
          src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"
          charset="utf-8"
       ></script>
-      <link rel="stylesheet" href="/css/style.css" />
-      <script src="/js/app.js"></script>
-      <script src="/js/auth.js"></script>
+      <link rel="stylesheet" href="css/style.css" />
+      <script src="js/app.js"></script>
       <title>Smitten</title>
    </head>
    <body ng-controller="MainController as ctrl">
-      <div ng-controller="AuthController as auth">
-         <div ng-if="!auth.currentUser">
-            <h2>Create User</h2>
-            <form ng-submit="auth.createUser()">
-               <input type="text" ng-model="auth.newUsername" />
-               <input type="password" ng-model="auth.newPassword" />
-               <input type="submit" value="Create User" />
-            </form>
-            <h2>Log In</h2>
-            <form ng-submit="auth.logIn()">
-               <input type="text" ng-model="auth.username" />
-               <input type="password" ng-model="auth.password" />
-               <input type="submit" value="Log In" />
-            </form>
+      <!-- <div id="particles-js"> -->
+      <div
+         ng-if="!ctrl.currentUser"
+         ng-include="'partials/authentication.html'"
+         class="auth"
+      ></div>
+      <div ng-if="ctrl.currentUser" class="main-background">
+         <div class="main-header">
+            <h1>Welcome, {{ ctrl.currentUser.info.name }}</h1>
+            <div class="header-button">
+               <button ng-click="ctrl.logOut()" class="logout-button">Log Out</button>
+            </div>
          </div>
-         <div ng-if="auth.currentUser">
-            <div ng-if="auth.edit === false">
-               <h2>Welcome, {{ auth.currentUser.username }}</h2>
-               <button ng-click="auth.logOut()">Log Out</button>
+         <div ng-include="'partials/nav.html'"></div>
+         <div class="container">
+            <div
+               ng-if="!ctrl.isEditing && !ctrl.isBrowsing && !ctrl.isViewingMatches && !ctrl.isViewingDates"
+            >
                <div class="profile">
-                  <form ng-submit="auth.changeEdit()">
-                     <input type="submit" value="Edit" />
-                  </form>
-                  <div class="pic-holder">
-                     <img ng-src="{{ auth.currentUser.imgURL }}" alt="Profile Picture" />
-                  </div>
-                  <p>Name: {{ auth.currentUser.info.name }}</p>
-                  <p>Age: {{ auth.currentUser.info.age }}</p>
-                  <p>Height: {{ auth.currentUser.info.height }}</p>
-                  <p>Location: {{ auth.currentUser.info.location }}</p>
-                  <p>Bio: {{ auth.currentUser.info.bio }}</p>
+                  <h2>Your Profile</h2>
+                  <img ng-src="{{ ctrl.currentUser.imgURL }}" alt="Profile Picture" />
+                  <p>Name: {{ ctrl.currentUser.info.name }}</p>
+                  <p>Age: {{ ctrl.currentUser.info.age }}</p>
+                  <p>Height: {{ ctrl.currentUser.info.height }}</p>
+                  <p>Location: {{ ctrl.currentUser.info.location }}</p>
+                  <p>Bio: {{ ctrl.currentUser.info.bio }}</p>
                </div>
             </div>
-            <div ng-if="auth.edit === true">
-               <form ng-submit="auth.updateProfile()">
-                  <input
-                     type="text"
-                     ng-model="auth.imgURL"
-                     id="imgURL"
-                     placeholder="{{ auth.currentUser.imgURL }}"
-                  />
-                  <input
-                     type="text"
-                     ng-model="auth.age"
-                     id="age"
-                     placeholder="{{ auth.currentUser.info.age }}"
-                  />
-                  <input
-                     type="text"
-                     ng-model="auth.name"
-                     id="name"
-                     placeholder="{{ auth.currentUser.info.name }}"
-                  />
-                  <input
-                     type="text"
-                     ng-model="auth.height"
-                     id="height"
-                     placeholder="{{ auth.currentUser.info.height }}"
-                  />
-                  <input
-                     type="text"
-                     ng-model="auth.location"
-                     id="location"
-                     placeholder="{{ auth.currentUser.info.location }}"
-                  />
-                  <textarea ng-model="auth.bio" id="bio" cols="30" rows="10">{{
-                     auth.currentUser.info.bio
-                  }}</textarea>
-                  <input type="submit" value="Update" />
-               </form>
-            </div>
+            <div ng-if="ctrl.isEditing" ng-include="'partials/edit_profile.html'"></div>
+            <div
+               ng-if="ctrl.isBrowsing"
+               ng-include="'partials/browse_profiles.html'"
+            ></div>
+            <div
+               ng-if="ctrl.isViewingMatches"
+               ng-include="'partials/view_matches.html'"
+            ></div>
+            <div
+               ng-if="ctrl.isViewingDates"
+               ng-include="'partials/view_dates.html'"
+            ></div>
          </div>
       </div>
+      <!-- </div> -->
+      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+      <script>
+         particlesJS.load("particles-js", "particles.json", function() {
+            console.log("callback - particles.js config loaded");
+         });
+      </script>
    </body>
 </html>
