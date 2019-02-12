@@ -1,29 +1,23 @@
 <div ng-if="!ctrl.isCreatingDates">
    <h2>Your Matches!</h2>
-   <!-- <table class="matches_list" ng-repeat="match in ctrl.matches">
-      <tr>
-         <td><img ng-src="{{ match.imgURL }}" alt="profile thumbnail" /></td>
-         <td>{{ match._id }}</td>
-         <td>{{ match.info.name }}</td>
-         <td>{{ match.info.age }}</td>
-         <td>{{ match.info.location }}</td>
-         <td><button>Plan a Date</button></td>
-      </tr>
-   </table> -->
-
-   <div ng-repeat="match in ctrl.matches">
+   <div ng-repeat="match in ctrl.matches" class="profile">
       <h3>{{ match.info.name }}</h3>
       <img ng-src="{{ match.imgURL }}" alt="profile thumbnail" />
-      <p>{{ match.info.age }}</p>
-      <p>{{ match.info.location }}</p>
-
-      <h3>Create A Date</h3>
+      <div class="prof-attr">
+         <p>Age: {{ match.info.age }}</p>
+         <p>Location: {{ match.info.location }}</p>
+         <p>Height: {{ match.info.height }}</p>
+      </div>
+      <h4>Create A Date</h4>
       <form
+         class="view-matches-form"
          ng-submit="ctrl.createADate(
             match._id, match.imgURL, match.info.name, match.info.age, match.info.location
             )"
       >
+         <label for="time">Time</label>
          <input type="text" ng-model="ctrl.time" />
+         <label for="time">Description</label>
          <textarea ng-model="ctrl.description" cols="30" rows="10"></textarea>
          <input type="submit" value="Create Date" />
       </form>

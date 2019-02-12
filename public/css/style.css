@@ -107,6 +107,18 @@ input[type="submit"] {
    justify-content: space-around;
 }
 
+.prof-attr {
+   display: flex;
+   width: 50%;
+   justify-content: space-evenly;
+}
+
+.view-matches-form {
+   display: flex;
+   width: 75%;
+   flex-direction: column;
+}
+
 img {
    border-radius: 25px;
    height: 300px;
