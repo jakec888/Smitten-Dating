@@ -119,6 +119,12 @@ input[type="submit"] {
    flex-direction: column;
 }
 
+.comparison {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+
 img {
    border-radius: 25px;
    height: 300px;
