@@ -100,6 +100,13 @@ input[type="submit"] {
    width: 80%;
 }
 
+.browse-buttons {
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
 img {
    border-radius: 25px;
    height: 300px;
