@@ -7,17 +7,51 @@ router.post("/", (req, res) => {
    // console.log(req.body);
 
    // Initializes Data Inside Variables
-   const currentUserID = req.body.currentUserID;
-   const userID = req.body.userID;
    const time = req.body.time;
    const description = req.body.description;
 
+   const currentUserID = req.body.currentUserID;
+   const currentUserimgURL = req.body.currentUserimgURL;
+   const currentUsername = req.body.currentUsername;
+   const currentUserage = req.body.currentUserage;
+   const currentUserlocation = req.body.currentUserlocation;
+
+   const intrestedUserID = req.body.intrestedUserID;
+   const intrestedUserimgURL = req.body.intrestedUserimgURL;
+   const intrestedUsername = req.body.intrestedUsername;
+   const intrestedUserage = req.body.intrestedUserage;
+   const intrestedUserlocation = req.body.intrestedUserlocation;
+
    // Validates
-   console.log(currentUserID, userID, time, description);
+   console.log(
+      currentUserID,
+      currentUserimgURL,
+      currentUsername,
+      currentUserage,
+      currentUserlocation
+   );
+
+   console.log(
+      intrestedUserID,
+      intrestedUserimgURL,
+      intrestedUsername,
+      intrestedUserage,
+      intrestedUserlocation
+   );
 
    const date = {
       time: time,
-      description: description
+      description: description,
+      currentUserID: currentUserID,
+      currentUserimgURL: currentUserimgURL,
+      currentUsername: currentUsername,
+      currentUserage: currentUserage,
+      currentUserlocation: currentUserlocation,
+      intrestedUserID: intrestedUserID,
+      intrestedUserimgURL: intrestedUserimgURL,
+      intrestedUsername: intrestedUsername,
+      intrestedUserage: intrestedUserage,
+      intrestedUserlocation: intrestedUserlocation
    };
 
    // Creates Date And Updates Each User With The Same Data _id
@@ -33,7 +67,7 @@ router.post("/", (req, res) => {
       );
 
       User.findByIdAndUpdate(
-         userID,
+         intrestedUserID,
          { $push: { dates: createdDate._id } },
          { new: true },
          (err, updatedUser) => {

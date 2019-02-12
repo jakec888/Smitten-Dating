@@ -7,8 +7,10 @@ app.controller("MainController", [
       this.isBrowsing = false;
       this.isViewingMatches = false;
       this.isCreatingDates = false;
+      this.isViewingDates = false;
       this.profileIndexToShow = 0;
       this.matches = [];
+      this.dates = [];
 
       this.createUser = () => {
          $http({
@@ -45,6 +47,7 @@ app.controller("MainController", [
                this.isEditing = false;
                this.isBrowsing = false;
                this.isViewingMatches = false;
+               this.isViewingDates = false;
                this.isCreatingDates = false;
                this.fetchProfiles();
             },
@@ -217,9 +220,21 @@ app.controller("MainController", [
          this.toggleCreateDates();
       };
 
-      this.createADate = userID => {
-         console.log(`My ID: ${this.currentUser._id}`);
-         console.log(`User ID: ${userID}`);
+      this.createADate = (userID, imgURL, name, age, location) => {
+         // Intrested Person
+         console.log(`Intrested User ID: ${userID}`);
+         console.log(`Intrested User Image URL: ${imgURL}`);
+         console.log(`Intrested User Name: ${name}`);
+         console.log(`Intrested User Age: ${age}`);
+         console.log(`Intrested User Location: ${location}`);
+         // Current User
+         console.log(`Current User ID: ${this.currentUser._id}`);
+         console.log(`Current User Image URL: ${this.currentUser.imgURL}`);
+         console.log(`Current User Name: ${this.currentUser.info.name}`);
+         console.log(`Current User Age: ${this.currentUser.info.age}`);
+         console.log(`Current User Location: ${this.currentUser.info.location}`);
+
+         // Date
          console.log(`Time: ${this.time}`);
          console.log(`Description: ${this.description}`);
 
@@ -227,8 +242,19 @@ app.controller("MainController", [
             method: "POST",
             url: "/dates",
             data: {
+               // Current User
                currentUserID: this.currentUser._id,
-               userID: userID,
+               currentUserimgURL: this.currentUser.imgURL,
+               currentUsername: this.currentUser.info.name,
+               currentUserage: this.currentUser.info.age,
+               currentUserlocation: this.currentUser.info.location,
+               // Intrested Person
+               intrestedUserID: userID,
+               intrestedUserimgURL: imgURL,
+               intrestedUsername: name,
+               intrestedUserage: age,
+               intrestedUserlocation: location,
+               // Date
                time: this.time,
                description: this.description
             }
@@ -243,6 +269,18 @@ app.controller("MainController", [
 
          this.time = "";
          this.description = "";
+      };
+
+      this.toggleViewingDates = () => {
+         this.isViewingDates = !this.isViewingDates;
+      };
+
+      this.viewDates = () => {
+         this.toggleViewingDates();
+         // this.dates = [];
+         // for (let date of this.currentUser.dates) {
+         //    // HERE
+         // }
       };
    }
 ]);
