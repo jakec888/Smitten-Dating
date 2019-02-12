@@ -1,0 +1,10 @@
+<h2>Your Matches!</h2>
+<table class="matches_list" ng-repeat="match in ctrl.matches">
+  <tr>
+    <td><img ng-src="{{match.imgURL}}" alt="profile thumbnail"></td>
+    <td>{{match.info.name}}</td>
+    <td>{{match.info.age}}</td>
+    <td>{{match.info.location}}</td>
+    <td><button>Plan a Date</button></td>
+  </tr>
+</table>

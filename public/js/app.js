@@ -5,7 +5,9 @@ app.controller("MainController", [
    function($http) {
       this.isEditing = false;
       this.isBrowsing = false;
+      this.isViewingMatches = false;
       this.profileIndexToShow = 0;
+      this.matches = [];
 
       this.createUser = () => {
          $http({
@@ -41,6 +43,7 @@ app.controller("MainController", [
                this.password = "";
                this.isEditing = false;
                this.isBrowsing = false;
+               this.isViewingMatches = false;
                this.fetchProfiles();
             },
             error => {
@@ -160,6 +163,41 @@ app.controller("MainController", [
       this.viewNextProfile = () => {
         this.profileIndexToShow = (this.profileIndexToShow+1)%this.userProfiles.length;
       };
+
+      this.startInterest = id => {
+        this.currentUser.interested.push(id);
+        $http({
+           method: "PUT",
+           url: `/users/${this.currentUser._id}`,
+           data: { interested: this.currentUser.interested }
+        });
+      };
+
+      this.stopInterest = id => {
+        const indexToRemove = this.currentUser.interested.indexOf(id);
+        this.currentUser.interested.splice(indexToRemove,1);
+        $http({
+           method: "PUT",
+           url: `/users/${this.currentUser._id}`,
+           data: { interested: this.currentUser.interested }
+        });
+      };
+
+      this.toggleViewingMatches = () => {
+        this.isViewingMatches = !this.isViewingMatches;
+      };
+
+      this.viewMatches = () => {
+        this.toggleViewingMatches();
+        this.matches = [];
+        for(let interest of this.currentUser.interested) {
+          let index = this.userProfiles.findIndex(profile => profile._id === interest)
+          if(this.userProfiles[index].interested.indexOf(this.currentUser._id) !== -1) {
+            this.matches.push(this.userProfiles[index]);
+          }
+        }
+      };
+
 
    }
 ]);

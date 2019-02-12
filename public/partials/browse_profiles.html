@@ -6,6 +6,14 @@
    <p>Height: {{ profile.info.height }}</p>
    <p>Location: {{ profile.info.location }}</p>
    <p>Bio: {{ profile.info.bio }}</p>
+   <button ng-if="ctrl.currentUser.interested.indexOf(profile._id) === -1"
+           ng-click="ctrl.startInterest(profile._id)">
+           I'm Interested in {{profile.info.name}}
+   </button>
+   <button ng-if="ctrl.currentUser.interested.indexOf(profile._id) !== -1"
+           ng-click="ctrl.stopInterest(profile._id)">
+           I'm No Longer Interested in {{profile.info.name}}
+   </button><br>
    <button ng-click="ctrl.viewPrevProfile()">Previous</button>
    <button ng-click="ctrl.toggleBrowsing()">Stop Browsing</button>
    <button ng-click="ctrl.viewNextProfile()">Next</button>
