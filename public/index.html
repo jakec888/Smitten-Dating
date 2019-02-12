@@ -12,7 +12,12 @@
       <title>Smitten</title>
    </head>
    <body ng-controller="MainController as ctrl">
-      <div ng-if="!ctrl.currentUser" ng-include="'partials/authentication.html'"></div>
+      <!-- <div id="particles-js"> -->
+      <div
+         ng-if="!ctrl.currentUser"
+         ng-include="'partials/authentication.html'"
+         class="auth"
+      ></div>
       <div ng-if="ctrl.currentUser">
          <h2>Welcome, {{ ctrl.currentUser.username }}</h2>
          <button ng-click="ctrl.logOut()">Log Out</button>
@@ -45,5 +50,12 @@
          ></div>
          <div ng-if="ctrl.isViewingDates" ng-include="'partials/view_dates.html'"></div>
       </div>
+      <!-- </div> -->
+      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+      <script>
+         particlesJS.load("particles-js", "particles.json", function() {
+            console.log("callback - particles.js config loaded");
+         });
+      </script>
    </body>
 </html>
