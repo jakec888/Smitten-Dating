@@ -9,7 +9,7 @@ app.config([
          .when("/example", {
             templateUrl: "views/example.html",
             controller: function() {
-               this.foo = "bar";
+               this.foo = "Hello, this is example 1";
             },
             controllerAs: "ctrl"
          })
