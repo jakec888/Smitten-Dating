@@ -1,4 +1,4 @@
-<div ng-repeat="date in ctrl.dates">
+<div ng-repeat="date in ctrl.dates | filter:ctrl.currentUser._id">
    <div>
       <p>Time: {{ date.time }}</p>
       <p>Description: {{ date.description }}</p>
