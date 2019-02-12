@@ -15,10 +15,10 @@
             match._id, match.imgURL, match.info.name, match.info.age, match.info.location
             )"
       >
-         <label for="time">Time</label>
-         <input type="text" ng-model="ctrl.time" />
-         <label for="time">Description</label>
-         <textarea ng-model="ctrl.description" cols="30" rows="10"></textarea>
+        <label for="date/time">Date/Time:</label>
+        <input type="datetime-local" id="date/time" ng-model="ctrl.time" /><br>
+        <label for="description">Description:</label>
+         <textarea id="description" ng-model="ctrl.description" cols="30" rows="10"></textarea>
          <input type="submit" value="Create Date" />
       </form>
 
