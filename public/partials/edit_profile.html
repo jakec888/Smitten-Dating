@@ -1,0 +1,46 @@
+<h2>Edit Your Profile</h2>
+<form ng-submit="ctrl.updateProfile()">
+  <img ng-src="{{ctrl.currentUser.imgURL}}"/>
+  <label for="imgURL">Image URL:</label>
+   <input
+      type="text"
+      ng-model="ctrl.imgURL"
+      id="imgURL"
+      placeholder="{{ ctrl.currentUser.imgURL }}"
+   />
+   <label for="name">Name:</label>
+   <input
+      type="text"
+      ng-model="ctrl.name"
+      id="name"
+      placeholder="{{ ctrl.currentUser.info.name }}"
+   />
+   <label for="age">Age:</label>
+   <input
+      type="number"
+      ng-model="ctrl.age"
+      id="age"
+      placeholder="{{ ctrl.currentUser.info.age }}"
+   />
+   <label for="height">Height:</label>
+   <input
+      type="text"
+      ng-model="ctrl.height"
+      id="height"
+      placeholder="{{ ctrl.currentUser.info.height }}"
+   />
+   <label for="location">Location:</label>
+   <input
+      type="text"
+      ng-model="ctrl.location"
+      id="location"
+      placeholder="{{ ctrl.currentUser.info.location }}"
+   />
+   <label for="bio">Bio:</label>
+   <textarea
+     ng-model="ctrl.bio"
+     id="bio" cols="30" rows="10"
+     placeholder="{{ ctrl.currentUser.info.bio }}">
+   </textarea>
+   <input type="submit" value="Update" />
+</form>

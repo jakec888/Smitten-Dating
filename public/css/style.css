@@ -6,6 +6,16 @@ body {
    font-family: "Montserrat", sans-serif;
 }
 
+img {
+  height: 300px;
+  width: auto;
+}
+
+.matches_list img {
+  height: 50px;
+  width: auto;
+}
+
 h1 {
    color: red;
 }
