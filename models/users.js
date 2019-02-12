@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
    password: { type: String, required: true },
    imgURL: { type: String },
    interested: [String],
+   dates: [String], // list of id's of dates
    info: {
       name: String,
       age: Number,

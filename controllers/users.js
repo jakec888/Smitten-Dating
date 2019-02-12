@@ -51,32 +51,4 @@ router.put("/:id", (req, res) => {
    );
 });
 
-/*
-router.put("/:id", (req, res) => {
-   console.log(req.params.id);
-   console.log(req.body);
-   res.json(req.body);
-
-   // User.findByIdAndUpdate(
-   //    req.params.id,
-   //    req.body,
-   //    { new: true },
-   //    (err, updatedUser) => {
-   //       res.json(updatedUser);
-   //    }
-   // );
-});
-
-===================================
-
-5c606ce1214cb30523d4970a
-{ imgURL:
-   'https://archive-media-1.nyafuu.org/bant/image/1532/44/1532446326266.png',
-  info:
-   { age: 100,
-     name: 'James Bond',
-     height: '10\'1',
-     location: 'Alaska',
-     bio: 'Hello, the name is Bond, James Bond!' } }
-*/
 module.exports = router;

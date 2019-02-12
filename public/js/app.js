@@ -223,22 +223,26 @@ app.controller("MainController", [
          console.log(`Time: ${this.time}`);
          console.log(`Description: ${this.description}`);
 
-         // $http({
-         //    method: "POST",
-         //    url: "/dates",
-         //    data: {
-         //       username: this.newUsername,
-         //       password: this.newPassword
-         //    }
-         // }).then(
-         //    response => {
-         //       this.newUsername = "";
-         //       this.newPassword = "";
-         //    },
-         //    error => {
-         //       console.error(error);
-         //    }
-         // );
+         $http({
+            method: "POST",
+            url: "/dates",
+            data: {
+               currentUserID: this.currentUser._id,
+               userID: userID,
+               time: this.time,
+               description: this.description
+            }
+         }).then(
+            response => {
+               console.log(response);
+            },
+            error => {
+               console.error(`Error: ${error}`);
+            }
+         );
+
+         this.time = "";
+         this.description = "";
       };
    }
 ]);
