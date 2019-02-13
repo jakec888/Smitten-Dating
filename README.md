@@ -4,11 +4,17 @@
 
 ## User Stories
 As a user, I would like access to my account to be secured by an encrypted password.
+
 As a user, I would like to edit my profile.
+
 As a user, I would like to browse the profiles of other users.
+
 As a user, I would like to express my interest in other users.
+
 As a user, I would like to know if users that I am interested in are interested in me back.
+
 As a user, I would like to plan dates with users I am interested in and who are interested in me.
+
 As a user, I would like to reject or cancel dates.
 
 ## Technologies Used
