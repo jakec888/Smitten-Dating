@@ -1,66 +1,60 @@
 <html lang="en" ng-app="SmittenApp">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-      <script
-         src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"
-         charset="utf-8"
-      ></script>
-      <link rel="stylesheet" href="css/style.css" />
-      <script src="js/app.js"></script>
-      <title>Smitten</title>
-   </head>
-   <body ng-controller="MainController as ctrl">
-      <!-- <div id="particles-js"> -->
-      <div
-         ng-if="!ctrl.currentUser"
-         ng-include="'partials/authentication.html'"
-         class="auth"
-      ></div>
-      <div ng-if="ctrl.currentUser" class="main-background">
-         <div class="main-header">
-            <h1>Welcome, {{ ctrl.currentUser.info.name }}</h1>
-            <div class="header-button">
-               <button ng-click="ctrl.logOut()" class="logout-button">Log Out</button>
-            </div>
-         </div>
-         <div ng-include="'partials/nav.html'"></div>
-         <div class="container">
-            <div
-               ng-if="!ctrl.isEditing && !ctrl.isBrowsing && !ctrl.isViewingMatches && !ctrl.isViewingDates"
-            >
-               <div class="profile">
-                  <h2>Your Profile</h2>
-                  <img ng-src="{{ ctrl.currentUser.imgURL }}" alt="Profile Picture" />
-                  <p>Name: {{ ctrl.currentUser.info.name }}</p>
-                  <p>Age: {{ ctrl.currentUser.info.age }}</p>
-                  <p>Height: {{ ctrl.currentUser.info.height }}</p>
-                  <p>Location: {{ ctrl.currentUser.info.location }}</p>
-                  <p>Bio: {{ ctrl.currentUser.info.bio }}</p>
-               </div>
-            </div>
-            <div ng-if="ctrl.isEditing" ng-include="'partials/edit_profile.html'"></div>
-            <div
-               ng-if="ctrl.isBrowsing"
-               ng-include="'partials/browse_profiles.html'"
-            ></div>
-            <div
-               ng-if="ctrl.isViewingMatches"
-               ng-include="'partials/view_matches.html'"
-            ></div>
-            <div
-               ng-if="ctrl.isViewingDates"
-               ng-include="'partials/view_dates.html'"
-            ></div>
-         </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js"></script>
+    <title>Smitten</title>
+  </head>
+  <body ng-controller="MainController as ctrl">
+    <!-- <div id="particles-js"> -->
+    <div
+      ng-if="!ctrl.currentUser"
+      ng-include="'partials/authentication.html'"
+      class="auth"
+    ></div>
+    <div ng-if="ctrl.currentUser" class="main-background">
+      <div class="main-header">
+        <h1>Welcome, {{ ctrl.currentUser.info.name }}</h1>
+        <div class="header-button">
+          <button ng-click="ctrl.logOut()" class="logout-button">Log Out</button>
+        </div>
       </div>
-      <!-- </div> -->
-      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-      <script>
-         particlesJS.load("particles-js", "particles.json", function() {
-            console.log("callback - particles.js config loaded");
-         });
-      </script>
-   </body>
+      <div ng-include="'partials/nav.html'"></div>
+      <div class="container">
+        <div
+          ng-if="!ctrl.isEditing && !ctrl.isBrowsing && !ctrl.isViewingMatches && !ctrl.isViewingDates"
+        >
+          <div class="profile">
+            <h2>Your Profile</h2>
+            <img ng-src="{{ ctrl.currentUser.imgURL }}" alt="Profile Picture" />
+            <p>Name: {{ ctrl.currentUser.info.name }}</p>
+            <p>Age: {{ ctrl.currentUser.info.age }}</p>
+            <p>Height: {{ ctrl.currentUser.info.height }}</p>
+            <p>Location: {{ ctrl.currentUser.info.location }}</p>
+            <p>Bio: {{ ctrl.currentUser.info.bio }}</p>
+          </div>
+        </div>
+        <div ng-if="ctrl.isEditing" ng-include="'partials/edit_profile.html'"></div>
+        <div ng-if="ctrl.isBrowsing" ng-include="'partials/browse_profiles.html'"></div>
+        <div
+          ng-if="ctrl.isViewingMatches"
+          ng-include="'partials/view_matches.html'"
+        ></div>
+        <div ng-if="ctrl.isViewingDates" ng-include="'partials/view_dates.html'"></div>
+      </div>
+    </div>
+    <!-- </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS.load("particles-js", "particles.json", function() {
+        console.log("callback - particles.js config loaded");
+      });
+    </script>
+  </body>
 </html>

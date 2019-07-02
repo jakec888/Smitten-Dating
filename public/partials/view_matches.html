@@ -1,29 +1,34 @@
 <div ng-if="!ctrl.isCreatingDates">
-   <h2>Your Matches!</h2>
-   <div ng-repeat="match in ctrl.matches" class="profile">
-      <h3>{{ match.info.name }}</h3>
-      <img ng-src="{{ match.imgURL }}" alt="profile thumbnail" />
-      <div class="prof-attr">
-         <p>Age: {{ match.info.age }}</p>
-         <p>Location: {{ match.info.location }}</p>
-         <p>Height: {{ match.info.height }}</p>
-      </div>
-      <h4>Create A Date</h4>
-      <form
-         class="view-matches-form"
-         ng-submit="ctrl.createADate(
+  <h2>Your Matches!</h2>
+  <div ng-repeat="match in ctrl.matches" class="profile">
+    <h3>{{ match.info.name }}</h3>
+    <img ng-src="{{ match.imgURL }}" alt="profile thumbnail" />
+    <div class="prof-attr">
+      <p>Age: {{ match.info.age }}</p>
+      <p>Location: {{ match.info.location }}</p>
+      <p>Height: {{ match.info.height }}</p>
+    </div>
+    <h4>Create A Date</h4>
+    <form
+      class="view-matches-form"
+      ng-submit="ctrl.createADate(
             match._id, match.imgURL, match.info.name, match.info.age, match.info.location
             )"
-      >
-        <label for="date/time">Date/Time:</label>
-        <input type="datetime-local" id="date/time" ng-model="ctrl.time" /><br>
-        <label for="description">Description:</label>
-         <textarea id="description" ng-model="ctrl.description" cols="30" rows="10"></textarea>
-         <input type="submit" value="Create Date" />
-      </form>
+    >
+      <label for="date/time">Date/Time:</label>
+      <input type="datetime-local" id="date/time" ng-model="ctrl.time" /><br />
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        ng-model="ctrl.description"
+        cols="30"
+        rows="10"
+      ></textarea>
+      <input type="submit" value="Create Date" />
+    </form>
 
-      <hr />
-   </div>
+    <hr />
+  </div>
 </div>
 
 <div ng-if="ctrl.isCreatingDates" ng-include="'partials/create_dates.html'"></div>

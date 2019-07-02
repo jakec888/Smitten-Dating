@@ -13,52 +13,52 @@ https://coolors.co/05668d-427aa1-ebf2fa-679436-a5be00
 */
 
 body {
-   font-family: "Montserrat", sans-serif;
-   display: flex;
-   justify-content: center;
-   background-color: #ebf2fa;
-   color: #427aa1;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  background-color: #ebf2fa;
+  color: #427aa1;
 }
 
 input[type="submit"] {
-   background-color: #ebf2fa;
-   color: #427aa1;
+  background-color: #ebf2fa;
+  color: #427aa1;
 }
 
 .auth {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
 }
 
 .part-auth {
-   background-color: #ebf2fa;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   padding: 20px;
-   width: 75%;
+  background-color: #ebf2fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  width: 75%;
 }
 
 .sign-up-form {
-   display: flex;
-   flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .log-in-form {
-   display: flex;
-   flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .logout-button {
-   font-size: 10px;
+  font-size: 10px;
 }
 
 .main-background {
-   background-color: #ebf2fa;
-   color: #427aa1;
-   width: 100%;
+  background-color: #ebf2fa;
+  color: #427aa1;
+  width: 100%;
 }
 /*
 .container {
@@ -66,75 +66,75 @@ input[type="submit"] {
 }
 */
 .main-header {
-   display: flex;
-   justify-content: space-between;
-   padding: 25px 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 10px 0 10px;
 }
 
 .header-button {
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-buttons {
-   display: flex;
-   justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .profile {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .edit-profile {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .edit-profile-form {
-   display: flex;
-   flex-direction: column;
-   width: 80%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }
 
 .browse-buttons {
-   width: 100%;
-   display: flex;
-   flex-direction: row;
-   justify-content: space-around;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .prof-attr {
-   display: flex;
-   width: 50%;
-   justify-content: space-evenly;
+  display: flex;
+  width: 50%;
+  justify-content: space-evenly;
 }
 
 .view-matches-form {
-   display: flex;
-   width: 75%;
-   flex-direction: column;
+  display: flex;
+  width: 75%;
+  flex-direction: column;
 }
 
 .comparison {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 img {
-   border-radius: 25px;
-   height: 300px;
-   width: auto;
+  border-radius: 25px;
+  height: 300px;
+  width: auto;
 }
 
 .part_dates img {
-   border-radius: 15px;
-   height: 100px;
-   width: auto;
+  border-radius: 15px;
+  height: 100px;
+  width: auto;
 }
 
 /* h1 {
