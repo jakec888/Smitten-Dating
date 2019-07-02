@@ -43,3 +43,8 @@ Filtering matches to be within a specified radius from the user would be a usefu
 ### Google Maps
 
 The Google Maps API can be brought in to embed maps for dates.
+
+### Partners
+
+[Jake C](https://github.com/jakec888)
+[Vincent G](https://github.com/vincentgu818)
