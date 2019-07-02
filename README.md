@@ -46,5 +46,4 @@ The Google Maps API can be brought in to embed maps for dates.
 
 ### Partners
 
-[Jake C](https://github.com/jakec888)
-[Vincent G](https://github.com/vincentgu818)
+[Jake C](https://github.com/jakec888) and [Vincent G](https://github.com/vincentgu818)
